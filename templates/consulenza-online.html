@@ -1,5 +1,4 @@
-{%extends 'base.html'%}
-{%block body%}
+{%extends 'base.html'%} {%block body%}
 <div class="page-header">
   <div class="container">
     <div class="page-header__text">
@@ -7,7 +6,9 @@
     </div>
     <div class="breadcrumbs">
       <span>
-        <a title="Go to Bolts." href="/"><span>Tuttoghisa</span></a>
+        <a title="Go to Bolts." href="/">
+          <span>Tuttoghisa</span>
+        </a>
       </span>
       <span>Richiedi una consulenza</span>
     </div>
@@ -18,104 +19,135 @@
 
 <div class="container">
   <div class="row">
-  <div class="col-xs-12 col-sm-12 col-lg-6">
+    <div class="col-xs-12 col-sm-12 col-lg-6">
       <br>
       <p>
-        <b>Richiedi Consulenza</b><br><br>
-
-        Hai bisogno di una consulenza su un progetto?<br>
-        Possiamo supportarti con diversi servizi:<br>
+        <b>I nostri contatti</b>
+      </p>
+      <p>Email :
+        <a href="mailto:tuttoghisa@gmail.com">tuttoghisa@gmail.com</a>
+      </p>
+      <p>Recapito telefonico :
+        <a href="tel:3495273665">3495273665</a>
+      </p>
+      <br>
+      <br>
+      <p>
+        <b>Richiedi Consulenza</b>
+        <br>
+        <br> Hai bisogno di una consulenza su un progetto?
+        <br> Possiamo supportarti con diversi servizi:
+        <br>
         <ul>
-          <li>             Preventivazione</li>
-          <li>             Supporto per redazione offerte economicamente più vantaggiose</li>
-          <li>            Indagini di mercato</li>
-          <li>            Relazioni giustificative </li>
-          <li>            Proposte varianti migliorative</li>
-          <li>            Analisi prezzi</li>
-          <li>          Verifica certificazioni</li>
-          <li>          Tabelle attribuzioni punteggi di gara</li>
+          <li> Preventivazione</li>
+          <li> Supporto per redazione offerte economicamente più vantaggiose</li>
+          <li> Indagini di mercato</li>
+          <li> Relazioni giustificative </li>
+          <li> Proposte varianti migliorative</li>
+          <li> Analisi prezzi</li>
+          <li> Verifica certificazioni</li>
+          <li> Tabelle attribuzioni punteggi di gara</li>
         </ul>
-        <a href="/consulenza-online">Compila il form per richiedere informazioni.</a>        
+        <a href="/consulenza-online">Compila il form per richiedere informazioni.</a>
       </p>
 
     </div>
     <div class="col-xs-12 col-sm-12 col-lg-6">
-      <div class="col-sm-12 "><br></div>
-      <form action="/consulenza-online" method="POST">
-      <div class="form-group">
-        <label  class="col-sm-2 control-label lb">Rag. sociale</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="rsociale" placeholder="Rag. sociale" required>
-        </div>
-      </div>        <div class="col-sm-12 "><br></div>
-      <div class="form-group">
-        <label  class="col-sm-2 control-label lb">Nome</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="nome" placeholder="Nome" required>
-        </div>
-      </div>        <div class="col-sm-12 "><br></div>
-      <div class="form-group">
-        <label  class="col-sm-2 control-label lb">Cognome</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="cognome" placeholder="Cognome" required>
-        </div>
-      </div>
-      <div class="col-sm-12 "><br></div>
-      <div class="form-group">
-        <label  class="col-sm-2 control-label lb">Email</label>
-        <div class="col-sm-10">
-          <input type="email" class="form-control" name="email" placeholder="Email" >
-        </div>
-      </div>
-      <div class="col-sm-12 "><br></div>
-      <div class="form-group">
-        <label  class="col-sm-2 control-label lb">Telefono</label>
-        <div class="col-sm-10">
-          <input type="tel" class="form-control" name="telefono" placeholder="Telefono" required>
-        </div>
-      </div>
-      <div class="col-sm-12 "><br></div>
-      <div class="form-group">
-        <label  class="col-sm-5 control-label lb">Interessato A </label>
-        <div class="col-sm-7">
-          <select name="interesse" required style="margin-left: -30px;">
-            <option value="Preventivazione">Preventivazione</option>
-            <option value="Consulenza offerte più vantaggiose">Consulenza offerte più vantaggiose</option>
-            <option value="Indagini di mercato">Indagini di mercato</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-sm-12 "><br></div>
-      <div class="form-group">
-        <label  class="col-sm-5 control-label lb">Messaggio</label>
-        <div class="col-sm-5">
-          <textarea name="messaggio" style="margin-left: -30px;"></textarea>
-        </div>
-      </div>
-      <div class="col-sm-12 "><br></div>
-      <div class="form-group">
-       <label  class="col-sm-5 control-label lb">Privacy</label>
-       <div class="col-sm-5" style="width: 50%;">
- 
-          <span style="font-size:13px;margin-left: -30px;">Accetto le condizioni di <a target="_blank" style="color:orange" href="#"> privacy di www.tuttoghisa.com</a></span> <input name="privacy" value="1" style="margin-left:40%" required="" type="checkbox">
-      </div>
-      <div class="form-group">
-       <div class="col-sm-offset-2 col-sm-10 ">
+      <div class="col-sm-12 ">
         <br>
-        <input type="hidden" name="referenza_prodotto" value="{{id_prodotto}}"> 
-        <input type="submit" class="btn btn-primary btn-rounded" style="float: right;" value="Invia">
       </div>
+      <form action="/consulenza-online" method="POST">
+        <div class="form-group">
+          <label class="col-sm-2 control-label lb">Rag. sociale</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="rsociale" placeholder="Rag. sociale" required>
+          </div>
+        </div>
+        <div class="col-sm-12 ">
+          <br>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label lb">Nome</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+          </div>
+        </div>
+        <div class="col-sm-12 ">
+          <br>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label lb">Cognome</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="cognome" placeholder="Cognome" required>
+          </div>
+        </div>
+        <div class="col-sm-12 ">
+          <br>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label lb">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" name="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="col-sm-12 ">
+          <br>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label lb">Telefono</label>
+          <div class="col-sm-10">
+            <input type="tel" class="form-control" name="telefono" placeholder="Telefono" required>
+          </div>
+        </div>
+        <div class="col-sm-12 ">
+          <br>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-5 control-label lb">Interessato A </label>
+          <div class="col-sm-7">
+            <select name="interesse" required style="margin-left: -30px;">
+              <option value="Preventivazione">Preventivazione</option>
+              <option value="Consulenza offerte più vantaggiose">Consulenza offerte più vantaggiose</option>
+              <option value="Indagini di mercato">Indagini di mercato</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-12 ">
+          <br>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-5 control-label lb">Messaggio</label>
+          <div class="col-sm-5">
+            <textarea name="messaggio" style="margin-left: -30px;"></textarea>
+          </div>
+        </div>
+        <div class="col-sm-12 ">
+          <br>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-5 control-label lb">Privacy</label>
+          <div class="col-sm-5" style="width: 50%;">
+
+            <span style="font-size:13px;margin-left: -30px;">Accetto le condizioni di
+              <a target="_blank" style="color:orange" href="#"> privacy di www.tuttoghisa.com</a>
+            </span>
+            <input name="privacy" value="1" style="margin-left:40%" required="" type="checkbox">
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 ">
+              <br>
+              <input type="hidden" name="referenza_prodotto" value="{{id_prodotto}}">
+              <input type="submit" class="btn btn-primary btn-rounded" style="float: right;" value="Invia">
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="col-xs-12 col-sm-12"></div>
     </div>
+    <!-- end of .error-404__content -->
   </div>
-  </form>
-  <div class="col-xs-12 col-sm-12"></div>
-</div>
-<!-- end of .error-404__content -->
-</div>
-<!-- end of .container -->
+  <!-- end of .container -->
 
-<br>
-<br>
-<br>
-
-{%endblock%}
+  <br>
+  <br>
+  <br> {%endblock%}

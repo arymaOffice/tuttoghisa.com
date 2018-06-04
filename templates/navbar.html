@@ -2,25 +2,30 @@
   <div class="top">
     <div class="container">
       <div class="top__left">
-        <div class="widget widget-icon-box">
-          <div class="icon-box">
-            <i class="fa  fa-home"></i>
-            <h4 class="icon-box__title">Il portale dedicato al mondo del'ingegneria idraulica</h4>
-            <span class="icon-box__subtitle"></span>
-          </div>
-        </div>
       </div>
       <div class="top__right">
         <div class="widget widget_nav_menu">
           <div class="menu-top-menu-container">
             <ul class="menu">
-              <li class="menu-item"><a href="/chi-siamo">Chi Siamo</a></li>
-              <li class="menu-item"><a href="/strumenti">Strumenti</a></li>
-              <li class="menu-item"><a href="/normative-approfondimenti">Normative</a></li>
-              <li class="menu-item"><a href="/appalti">Appalti</a></li>
+              <li class="menu-item">
+                <a href="/chi-siamo">Chi Siamo</a>
+              </li>
+              <li class="menu-item">
+                <a href="/strumenti">Strumenti</a>
+              </li>
+              <li class="menu-item">
+                <a href="/normative-approfondimenti">Normative</a>
+              </li>
+              <li class="menu-item">
+                <a href="/appalti">Appalti</a>
+              </li>
 
-              <li class="menu-item"><a href="/news">News</a></li>
-              <li class="menu-item"><a href="#">Contatti</a></li>
+              <li class="menu-item">
+                <a href="/news">News</a>
+              </li>
+              <li class="menu-item">
+                <a href="/consulenza-online">Contatti</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -79,60 +84,61 @@
                 {{menu| raw}}
               </ul>
             </li>
-            <li class="menu-item"><a href="/strumenti">Strumenti</a></li>    
-            <li class="menu-item"><a href="/normative-approfondimenti">Normative</a></li>
-              <li class="menu-item"><a href="/appalti">Appalti</a></li>
-            
-            <li class="menu-item "><a href="/news">News</a></li>
-            <li class="menu-item "><a href="/consulenza-online">Consulenza Online</a></li>
+            <li class="menu-item">
+              <a href="/strumenti">Strumenti</a>
+            </li>
+            <li class="menu-item">
+              <a href="/normative-approfondimenti">Normative</a>
+            </li>
+            <li class="menu-item">
+              <a href="/appalti">Appalti</a>
+            </li>
+
+            <li class="menu-item ">
+              <a href="/news">News</a>
+            </li>
+            <li class="menu-item ">
+              <a href="/consulenza-online">Consulenza Online</a>
+            </li>
           </ul>
         </nav>
         <!-- Header widget area -->
         <div class="header__widgets">
-          <div class="widget widget-icon-box">
-            <div class="icon-box">
-              <i class="fa fa-check-square"></i>
-              <h4 class="icon-box__title">Oltre 15.000 prodotti</h4>
-            </div>
-          </div>
-          <div class="widget widget-icon-box">
-            <div class="icon-box">
-              <i class="fa fa-clock-o"></i>
-              <h4 class="icon-box__title">Strumenti utili</h4>
-            </div>
-          </div>
-          <div class="widget widget-icon-box">
-            <div class="icon-box">
-              <i class="fa fa-envelope"></i>
-              <h4 class="icon-box__title">Consulenza alla progettazione</h4>
-            </div>
-          </div>
-          {% if nome %}<div class="widget widget_text">
-          <div class="textwidget">
-            <a class="btn btn-primary btn-rounded" href="/esci" target="_self">
-             Esci
-           </a>
-         </div>
-       </div>
-       <div class="col-lg-12 text-center" > Benvenuto {{nome}}</div>
-       {% else %}
-       <div class="widget widget_text">
-        <div class="textwidget">
-          <a class="btn btn-primary btn-rounded" href="/registrati" target="_self">
-           Registrati
-         </a>
-         <a class="btn btn-primary btn-rounded" href="/accedi" target="_self">
-           Accedi
-         </a>
-       </div>
-     </div>
-     {%endif%}
 
-   </div>
- </div>
- <!-- end of .header -->
-</div>
-<!-- end of .container -->
-</div>
-<!-- end of .header__container -->
+          <div class="widget widget_text">
+            <div class="textwidget">
+              <h5 style="font-size: 0.77778rem;margin-top: 24px; font-weight: 100;color:#99a">Il portale dedicato al mondo dell’ingegneria idraulica e non solo.</h5>
+            </div>
+          </div>
+
+
+          {% if nome %}
+          <div class="widget widget_text">
+            <div class="textwidget">
+              <a class="btn btn-primary btn-rounded" href="/esci" target="_self">
+                Esci
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-12 text-center"> Benvenuto {{nome}}</div>
+          {% else %}
+          <div class="widget widget_text">
+            <div class="textwidget">
+              <a class="btn btn-primary btn-rounded" href="/registrati" target="_self">
+                Registrati
+              </a>
+              <a class="btn btn-primary btn-rounded" href="/accedi" target="_self">
+                Accedi
+              </a>
+            </div>
+          </div>
+          {%endif%}
+
+        </div>
+      </div>
+      <!-- end of .header -->
+    </div>
+    <!-- end of .container -->
+  </div>
+  <!-- end of .header__container -->
 </header>
