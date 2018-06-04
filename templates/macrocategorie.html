@@ -1,0 +1,57 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__text">
+      <h1 class="page-header__title">Prodotti</h1>
+    </div>
+    <div class="breadcrumbs">
+
+        <a title="Tuttoghisa" href="/"><span>Tuttoghisa</span></a>
+
+      <a href="/macrocategorie"><span>Prodotti</span></a>
+      <span>Macrocategorie</span>
+    </div>
+  </div>
+  <!-- .container -->
+</div>
+
+
+                <div class="container">
+                    <div class="row ">
+                        {% set i = 0 %}
+                        {% for macros in macrocategorie%}
+                        {% if (i is divisibleby(3)) and (i > 0) %}
+                    </div> 
+                    <div class="row ">
+                        {% endif %}                        
+                       <div class="col-lg-4" style="margin-bottom:2%">
+                            <div class="widget">
+                                <div class="page-box page-box--block">
+                                    <a class="" href="/lineeprodotti?cat={{macros.id}}">
+                                        <img src="{{IMG_MACRO}}{{macros_id[i]}}.jpg" width="360" height="180" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" class="wp-post-image" alt="{{macros.label}}">
+                                    </a>
+                                    <div class="page-box__content">
+                                        <h4 class="page-box__title">
+                                            <a href="/lineeprodotti?cat={{macros.id}}">{{macros.label}}</a>
+                                        </h4>
+                                        <p class="page-box__text">Consulta una vasta gamma di Prodotti</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% set i = 1 + i  %}
+                        <!-- end of .col -->
+                      {% endfor %}
+                    </div>
+                    <!-- end of .row -->
+                </div>
+                <!-- end of .container -->
+ 
+ 
+<br>
+<br>
+<br>
+
+
+{%endblock%}

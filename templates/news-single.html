@@ -1,0 +1,150 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="page-header">
+    <div class="container">
+        <div class="page-header__text">
+            <h2 class="page-header__title">{{pagetitle}}</h2>
+            <p class="page-header__subtitle">{{snews.id}}</p>
+        </div>
+        <div class="breadcrumbs">
+            <a title="Go to Tuttoghisa." href="/" class="home">
+                Tuttoghisa
+            </a>
+            <a title="Go to {{pagetitle}}." href="/{{route}}" class="post">
+                {{pagetitle}}
+            </a>
+            <span>{{snews.titolo |convert_encoding ('ISO-8859-1','HTML-ENTITIES')}}</span>
+        </div>
+    </div>
+    <!-- end of .container -->
+</div>
+<!-- end of .page-header -->
+
+<div class="content-area container">
+                  <div class="row">
+                    <div class="col-lg-12">
+                        <div class="widget">
+                            <div class="textwidget" style="text-align: center;">
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- BANNER 1 -->
+                                <ins class="adsbygoogle"
+                                style="display:inline-block;width:728px;height:90px"
+                                data-ad-client="ca-pub-4180109058245769"
+                                data-ad-slot="3806711552"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of .col -->
+                </div>
+<br><br>
+    <div class="row">
+
+        <main class="site-main col-xs-12 col-lg-9">
+
+          {{erroreCommento | raw}}
+
+
+
+            <article class="clearfix hentry">
+                <header class="hentry__header">
+                    <img  width="600" height="300" style="max-height: 300px; max-width: 600px;margin: auto;float: none;" src="{{IMG_NEWS}}{{snews.upfile}}" class="img-fluid  hentry__featured-image" alt="">
+                    <h1 class="hentry__title">{{snews.titolo |convert_encoding ('ISO-8859-1','HTML-ENTITIES')}}</h1>
+
+
+                </header>
+                <!-- .hentry-header -->
+                <div class="hentry__content ">
+                    <p>
+                      {{snews.articolo |convert_encoding ('UTF-8','HTML-ENTITIES')  |raw}}
+                  </p>
+                  <br><br><br>
+                  <p style="display: block;text-align: center;margin-top: -100px;color:black">
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox"></div>
+
+               </p>
+    <br>
+    <br>
+                  <p>
+                     <i class="fa fa-paperclip" aria-hidden="true"></i><span class="sidebar__headings" style="font-family: "Roboto", Helvetica, Arial, sans-serif;
+font-weight: 900;line-height: 1.2;"> Downloads</span>
+                 </p>
+                 <p>
+
+
+                         {% for file in files %}
+                         <a href="{{PATH_FILES}}{{file.nameFile}}">Allegato</a><br>
+                         {% endfor%}
+
+                 </p>
+                 <div class="meta">
+                    <span class="meta__item meta__item--author">
+                        <i class="fa fa-user"></i>
+                        admin
+                    </span>
+                    <a class="meta__item meta__item--date" href="../asset/#">
+                        <time datetime="2016-04-22T10:10:51+00:00">
+                            <i class="fa fa-calendar-o"></i>
+                            {{snews.data_pubblicazione |date("d/m/Y" ,"Europe/Paris")}}
+                        </time>
+                    </a>
+                    <span class="meta__item meta__item--categories">
+                        <i class="fa fa-tag"></i>
+                        <a href="#" rel="category tag">{{snews.tags}}</a>,
+
+                    </span>
+                    <span class="meta__item  meta__item--comments">
+                        <i class="fa fa-comment"></i>
+                        <a href="#">{{ConteggioCommenti.count}} Commenti</a>
+                    </span>
+                </div>
+                <!-- .meta -->
+            </div>
+            <!-- .hentry-content -->
+        </article>
+        <!-- end of .hentry -->
+
+        <div class="comments">
+          <h2 class="comments__heading"> Commenti</h2>
+          <table style="color:black" cellpadding="3">
+
+          {% for comment in commenti %}
+          <tr><td>  <i class="fa fa-user"></i> {{comment.nome}}</td><td>   <i class="fa fa-calendar-o"></i> {{comment.data |date("d/m/Y" ,"Europe/Paris")}}</td></tr>
+          <tr><td colspan="2"><i class="fa fa-sticky-note" aria-hidden="true"></i> {{comment.commento}}</td></tr>
+          {% endfor%}
+
+        </table>
+
+        </div>
+        <!-- end of .comments -->
+
+        <div class="comments">
+
+            <div class="comment-respond">
+                <form action="/invia-commento" method="post" class="comment-form" novalidate="">
+                    <input type="hidden" name="type" value="{{type}}">
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <label for="comment" class="screen-reader-text">I tuoi commenti<span class="required theme-clr">*</span>
+                            </label>
+                            <textarea name="commento" class="form-control" placeholder="Nuovo commento" rows="5" aria-required="true" required></textarea>
+                        </div>
+                    </div>
+                    <input type="hidden" name="valore" value="{{snews.id}}">
+                    <!-- end of .row -->
+                    <p class="form-submit">
+                        <input name="submit" type="submit" class="submit  btn  btn-primary  text-uppercase" value="Invia commento">
+                    </p>
+                </form>
+            </div>
+        </div>
+        <!-- end of .comments -->
+
+    </main>
+    <!-- end of .site-main -->
+    {% include 'barra_laterale.html'%}
+    {% endblock%}

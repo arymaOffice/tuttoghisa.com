@@ -1,0 +1,123 @@
+
+{%extends 'base.html'%}
+{%block body%}
+
+<div class="page-header">
+    <div class="container">
+        <div class="page-header__text">
+            <h1 class="page-header__title">{{pagetitle}}</h1>
+            <p class="page-header__subtitle">Strumenti Tuttoghisa</p>
+        </div>
+        <div class="breadcrumbs">
+            <a href="/" class="home">
+                Tuttoghisa
+            </a>
+            <span>{{pagetitle}}</span>
+        </div>
+    </div>
+    <!-- end of .container -->
+</div>
+<!-- end of .page-header -->
+<div class="content-area container">
+    <main class="site-main col-xs-12 col-lg-9">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-4" style="margin-bottom:2%">
+                    <div class="widget">
+                        <div class="page-box page-box--block">
+                            <img src="../asset/img/vocicapitolato.jpg" width="360" height="180"  sizes="(min-width: 992px) 360px, calc(100vw - 30px)" class="wp-post-image" alt="strumenti">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="page-box__content">
+                        <p ><h4 class="sidebar_headings">Voci di Capitolato</h4></p>
+                        <ul>
+                            <a href="/listastrumenti?nn=47"><li>Tubazioni e Raccordi</li></a>
+                            <a href="/listastrumenti?nn=54"><li>Valvole</li></a>
+                            <a href="/listastrumenti?nn=60"><li>Chiusini e Griglie</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end of .col -->
+            </div>
+            <!-- end of .row -->
+            <br>
+            <br>
+            <hr>
+            <br>
+            <br>
+            <div class="row ">
+                <div class="col-lg-4" style="margin-bottom:2%">
+                    <div class="widget">
+                        <div class="page-box page-box--block">
+                            <img src="../asset/img/strumenti.jpg" width="360" height="180"  sizes="(min-width: 992px) 360px, calc(100vw - 30px)" class="wp-post-image" alt="Metal buildings">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="page-box__content">
+                        <p ><h4 class="sidebar_headings">Strumenti di calcolo</h4></p>
+                        <ul>
+                            <a href="/download?name=idrovalvole.xls" target="_blank"><li>Foglio di calcolo idrovalvole</li></a>
+                            <a href="/download?name=sfiati.xls" target="_blank"><li>Foglio di calcolo sfiati</li></a>
+                            <a href="/download?name=perditecarico.xls" target="_blank"><li>Foglio di calcolo perdite di carico in condotte</li></a>
+                            <a href="/download?name=costiposa.xls" target="_blank"><li>Calcolo costi posa ghisa</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end of .col -->
+            </div>
+            <!-- end of .row -->
+
+
+            <br>
+            <hr>
+            <br>
+            <div class="row ">
+                <div class="col-lg-4" style="margin-bottom:2%">
+                    <div class="widget">
+                        <div class="page-box page-box--block">
+                            <img src="../asset/img/dis&rel.jpg" width="360" height="180" sizes="(min-width: 992px) 360px, calc(100vw - 30px)" class="wp-post-image" alt="Metal buildings">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="page-box__content">
+                        <p ><h4 class="sidebar_headings">Disegni e relazioni</h4></p>
+                        <ul>
+                            <a href="/disegni-relazioni?n=74"><li>Relazioni tecniche </li></a>
+                            <a href="/disegni-relazioni?n=75"><li>Disegni in dwg</li></a>
+                            <a href="/disegni-relazioni?n=76"><li>Relazione su differente impiego delle apparecchiature</li></a>
+                            <a href="/disegni-relazioni?n=77"><li>Manuali di uso e manutenzione</li></a>
+                            <a href="/disegni-relazioni?n=78"><li>Tecniche di posa</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end of .col -->
+            </div>
+            <!-- end of .row -->
+            <br>
+            <hr>
+            <br>
+            <div class="row ">
+                <div class="col-lg-8">
+                    <p>
+                        <b>Richiedi Consulenza</b><br><br>
+
+                        Hai bisogno di una consulenza su un progetto?<br>
+                        Possiamo supportarti con diversi servizi.<br>
+                        <a href="/consulenza-online">Compila il form per richiedere informazioni.</a>        
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+        <!-- end of .container -->
+
+    </main>
+    <!-- end of .site-main -->
+    {% include 'barra_laterale.html'%}
+
+    {%endblock%}

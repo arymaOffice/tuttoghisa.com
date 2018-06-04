@@ -1,0 +1,108 @@
+{%extends 'base.html'%}
+{%block body%}
+<script type="text/javascript"> fbq('track', 'CompleteRegistration');
+ </script>
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__text">
+      <h1 class="page-header__title">Registrati</h1>
+    </div>
+    <div class="breadcrumbs">
+      <span>
+        <a title="Go to Bolts." href="/"><span>Tuttoghisa</span></a>
+      </span>
+      <span>Registrati</span>
+    </div>
+  </div>
+  <!-- .container -->
+</div>
+
+<!-- .page-header -->
+<div class="error-404">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-2 col-lg-1"></div>
+      <div class="col-xs-6 col-sm-4 col-lg-4"></div>
+      <div class="col-xs-6 col-sm-4 col-lg-6">
+        <form class="form-horizontal" method="POST" action="/registrati">
+          <div class="form-group">
+            <label  class="col-sm-2 control-label lb">Nome</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+            <label  class="col-sm-2 control-label lb">Cognome</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="cognome" placeholder="cognome" required>
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label lb">Telefono</label>
+            <div class="col-sm-10">
+              <input type="tel" class="form-control" name="telefono" placeholder="Telefono" required>
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+            <label  class="col-sm-2 control-label lb">Professione</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="professione" placeholder="Professione" required>
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+            <label  class="col-sm-2 control-label lb">Località</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="localita" placeholder="Località" required>
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+            <label  class="col-sm-2 control-label lb">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="email" placeholder="Email" required>
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+            <label  class="col-sm-2 control-label lb">Conferma </label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="email" placeholder="Conferma Email" data-equalto="email">
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+            <label  class="col-sm-2 control-label lb">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+          </div> <div class="col-sm-12 "><br></div>
+              <div class="form-group">
+               <label  class="col-sm-5 control-label lb">Privacy</label>
+            <div class="col-sm-5" style="width: 50%;">
+ 
+          <span style="font-size:13px;margin-left: -30px;">Accetto le condizioni di <a target="_blank" style="color:orange" href="/privacy"> privacy di www.tuttoghisa.com</a></span> <input name="privacy" value="1" style="margin-left:40%" required="" type="checkbox">
+      </div>
+            
+          </div> <div class="col-sm-12 "><br></div>
+          <div class="form-group">
+
+            <div class="col-sm-offset-2 col-sm-10">
+              <br>
+              <button type="submit" class="btn btn-primary btn-rounded">Registrati</button>
+            </div>
+          </div>
+          <span style="float: right;padding-top:37px">Hai già un account?<a target="_blank" style="color:orange" href="/accedi"> Accedi da qui. </a></span>
+        </form>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-lg-1"></div>
+
+
+    </div>
+    <!-- end of .error-404__content -->
+  </div>
+  <!-- end of .container -->
+</div>
+<br>
+<br>
+<br>
+
+
+{%endblock%}

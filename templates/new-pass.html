@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__text">
+      <h1 class="page-header__title">Accedi</h1>
+    </div>
+    <div class="breadcrumbs">
+      <span>
+        <a title="Go to Bolts." href="/"><span>Tuttoghisa</span></a>
+      </span>
+      <span>New Password</span>
+    </div>
+  </div>
+  <!-- .container -->
+</div>
+<!-- .page-header -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-lg-3"></div>
+    <div class="col-xs-6 col-sm-8 col-lg-6">
+      <form class="form-horizontal" method="POST" action="/new-pass">
+
+        <div class="form-group">
+          <label  class="col-sm-2 control-label lb">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="password" placeholder="password" style="width:80%" required>
+          </div>
+        </div>
+				<div class="col-sm-12 col-md-8 col-lg-12"><br></div>
+				<div class="form-group">
+          <label  class="col-sm-2 control-label lb">Conferma</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="conferma-password" placeholder="conferma" style="width:80%" data-equalto="password" required>
+          </div>
+        </div>
+        <div class="col-sm-12 "><br></div>
+            <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10 ">
+            <br>
+            <button type="submit" class="btn btn-primary btn-rounded" style="float: right;">Conferma</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-12 col-sm-2 col-lg-3"></div>
+
+
+  </div>
+  <!-- end of .error-404__content -->
+</div>
+<!-- end of .container -->
+
+<br>
+<br>
+<br>
+<!-- end-of .container -->
+<div class="container">
+  <div class="textwidget">
+    <div class="logo-panel">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-lg-2">
+          <img class="img-fit" src="../asset/img/image001.gif" style="paddin-top:15px;max-height:110px" alt="Client logo">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-lg-8">
+          <img class="img-fit" src="../asset/img/image004.jpg"  alt="Client logo">
+        </div>
+        <div class="col-xs-12 col-sm-4 col-lg-2">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of .container -->
+<!-- end of .error-404 -->
+
+{%endblock%}

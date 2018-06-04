@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{%block body%}
+            <div class="page-header">
+                <div class="container">
+                    <div class="page-header__text">
+                        <h1 class="page-header__title">{{pagetitle}}</h1>
+                        <p class="page-header__subtitle">Ultime notizie di Tuttoghisa</p>
+                    </div>
+                    <div class="breadcrumbs">
+                        <a title="home" href="/" class="home">
+                            Tuttoghisa
+                        </a>
+                        <a title="strumenti" href="/strumenti" class="home">
+                            Strumenti
+                        </a>
+                        <span>{{pagetitle}}</span>
+                    </div>
+                </div>
+                <!-- end of .container -->
+            </div>
+            <!-- end of .page-header -->
+
+            <div class="content-area container">
+
+                <div class="row">
+
+                    <main class="site-main col-xs-12 col-lg-9">
+                        {% for item in news%}
+                        <article class="clearfix hentry">
+                            <header class="hentry__header">
+                                <a class="hentry__featured-image" href="">
+                                </a>
+                                <h2 class="hentry__title">
+                                    <a href="/download?nn={{item.id}}" target="_blank" rel="bookmark">{{item.titolo |convert_encoding ('ISO-8859-1','HTML-ENTITIES')}}</a>
+                                </h2>
+                            </header>
+                            <!-- .hentry__header -->
+                            <div class="hentry__content ">
+                                <div class=" meta">
+                                    <span class="meta__item meta__item--author">
+                                        <i class="fa fa-user"></i>
+                                        admin
+                                    </span>
+                                    <a class="meta__item meta__item--date" href="#">
+                                        <time datetime="22-04-2016T10:10:51+00:00">
+                                            <i class="fa fa-calendar-o"></i>
+                                            {{item.data_pubblicazione |date("d/m/Y" ,"Europe/Paris")}}
+                                        </time>
+                                    </a>
+                                    <span class="meta__item meta__item--categories">
+                                        <i class="fa fa-tag"></i>
+                                        <a href="#" rel="category tag">{{item.tags}}</a>
+
+                                    </span>
+                                    <span class="meta__item meta__item--comments">
+                                        <i class="fa fa-comment"></i>
+                                        <a href="#">0 Comments</a>
+                                    </span>
+                                    <a href="/download?nn={{item.id}}" target="_blank" class="btn btn-primary btn-rounded" style="float:right;max-height:40px;padding-top:5px;color:white">Download </a>
+                                </div>
+                                <!-- .meta -->
+                            </div>
+                            <!-- .hentry-content -->
+                        </article>
+                        <!-- #post-## -->
+                        {% endfor%}
+
+
+                        <nav class="navigation pagination">
+                            <h2 class="screen-reader-text">Paginazione</h2>
+                            <div class="nav-links">
+                                {{pagine | raw}}
+                            </div>
+                        </nav>
+
+                    </main>
+                    <!-- end of .site-main -->
+{% include 'barra_laterale_strumenti.html'%}
+
+            {%endblock%}

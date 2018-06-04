@@ -1,0 +1,113 @@
+{%extends 'base.html'%}{%block body%}
+
+
+            <div class="page-header">
+                <div class="container">
+                    <div class="page-header__text">
+                        <h1 class="page-header__title">Prodotti</h1>
+                        <p class="page-header__subtitle">{{prima.clabel}}</p>
+                    </div>
+                    <div class="breadcrumbs">
+                        <a title="home" href="/" class="home">
+                            Tuttoghisa
+                        </a>
+                        <a title="Prodotti" href="/macrocategorie" class="home ">
+                            Prodotti
+                        </a>
+                        <span>{{prima.clabel}} </span>
+                    </div>
+                </div>
+                <!-- end of .container -->
+            </div>
+            <!-- end of .page-header -->
+
+            <div class="content-area container">
+
+                <div class="row">
+
+                    <main class="site-main col-xs-12">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="widget">
+                                    <div class="portfolio-grid" data-type="grid">
+                                        <nav class="portfolio-grid__header">
+                                          {% if lineaprodotti%}
+                                          {{desclinea.descrizione |convert_encoding ('UTF-8','HTML-ENTITIES') | striptags  |convert_encoding ('ISO-8859-1','HTML-ENTITIES') |convert_encoding ('UTF-8','HTML-ENTITIES') }}
+                                          {% else %}  <a href="#" class="portfolio-grid__mobile-filter js-filter btn btn-primary btn-sm hidden-lg-up">
+                                                <span class="fa fa-filter"></span> &nbsp; FILTER
+                                            </a>
+                                            <ul class="portfolio-grid__nav js-wpg-nav-holder">
+                                                <li class="portfolio-grid__nav-item is-active">
+                                                    <a href="#widget-0-0-0-all" data-category="*" class="portfolio-grid__nav-link  js-wpg-nav">{{prima.clabel}}</a>
+                                                </li>
+                                              {% set i = 0 %}
+                                                {% for items in categorie %}
+                                                {% if i > 0%}
+                                                <li class="portfolio-grid__nav-item">
+                                                    <a href="#widget-0-0-0-{{items.clabel}}" data-category="{{items.clabel}}" class="portfolio-grid__nav-link  js-wpg-nav">{{items.clabel | slice (0,35)}}</a>
+                                                </li>
+                                                {% endif %}
+                                                {% set i = 1 %}
+                                                {% endfor%}
+                                            </ul>{% endif %}
+
+                                        </nav>
+                                        <div class="js-wpg-items">
+                                            <div class="row">
+                                              {% if lineaprodotti%}
+                                              {% for items in lineaprodotti %}
+                                                <div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="{{items.clabel}}">
+                                                    <a class="card portfolio-grid__card js-wpg-card" href="/single-product?n={{items.pid}}">
+                                                        <img src="{{IMG_PRODOTTI}}{{items.pid}}.jpg" class="card-img-top  portfolio-grid__card-img" alt="photo1" onerror="this.src='../asset/img/construction1.jpg'" style="margin-top: 25px;">
+                                                        <div class="card-block portfolio-grid__card-block">
+                                                <h6 class="card-title  portfolio-grid__card-title">{{items.plabel |convert_encoding ('ISO-8859-1','HTML-ENTITIES') | slice (0,30) }}</h6>
+                                                            
+                                                            <div class="portfolio-grid__card-items" style="margin-top: 0.444rem;">
+                                                                <p class="portfolio-grid__card-item" style="margin-bottom: -18px;">
+                                                                     Prodotto da : {{items.ilabel}}                                             
+                                                                </p>                                                                
+                                                            </div>
+                                                            <a>Maggiori dettagli<a>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                {% endfor%}
+                                              {% else %}
+                                              {% for items in prodotti %}
+                                                <div class="col-xs-12 col-sm-6 col-lg-3 js-wpg-item" data-categories="{{items.clabel}}">
+                                                    <a class="card portfolio-grid__card js-wpg-card" href="/linea?l={{items.lid}}">
+                                                        <img src="{{IMG_LINEE}}{{items.lid}}.jpg" class="card-img-top  portfolio-grid__card-img" alt="photo1" onerror="this.src='../asset/img/construction1.jpg'" style="margin-top: 25px;">
+                                                        <div class="card-block portfolio-grid__card-block">
+                                                <h6 class="card-title  portfolio-grid__card-title">{{items.lplabel |convert_encoding ('ISO-8859-1','HTML-ENTITIES') | slice (0,30) }}</h6>
+                                                
+                                                            <div class="portfolio-grid__card-items" >
+                                                                <a href="/linea?l={{items.lid}}">Mostra prodotti<a>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                {% endfor%}
+                                              {% endif%}
+
+                                          </div>
+                                            <!-- end of .row -->
+
+                                        <!-- end of .js-wpg-items -->
+                                    </div>
+                                    <!-- end of .portfolio-grid -->
+                                </div>
+                                <!-- end of .widget -->
+                            </div>
+                            <!-- end of .col -->
+                        </div>
+                        <!-- end of .row -->
+
+                    </main>
+
+                </div>
+                <!-- end of .row -->
+
+            </div>
+            <!-- end of .content-area -->
+{%endblock%}

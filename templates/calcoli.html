@@ -1,0 +1,140 @@
+{% extends 'base.html'%}
+{% block body%}
+
+<div class="page-header">
+    <div class="container">
+        <div class="page-header__text">
+            <h1 class="page-header__title">Condotte in pressione</h1>
+        </div>
+        <div class="breadcrumbs">
+            <a  href="/" class="home">
+                Tuttoghisa.it
+            </a>
+            <a href="#" class=" current-item">
+               Perdite di carico
+           </a>
+       </div>
+   </div>
+   <!-- end of .container -->
+</div>
+<!-- end of .page-header -->
+
+<div class="content-area container no-padd">
+
+    <main class="col-xs-12 col-lg-9 col-lg-push-3">
+
+        <div class="row marg-lg-b30">
+            <div class="col-lg-12">
+                <div id="basidicalcolo">
+                    <br>
+                    <br>
+                    <div class="" >
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="l" name="l" style="max-width: 50%;" ></div>
+                            <div class="__title" style="max-width: 24%;padding-left:20%">λ</div>
+                        </div>
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="v" name="v" style="max-width: 50%;" ></div>
+                            <div class="__title" style="max-width: 24%;padding-left:20%">v</div>
+                        </div>
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="D" name="D" style="max-width: 50%;"></div>
+                            <div class="__title" style="max-width: 24%;margin-left:20%">D</div>
+                        </div>
+                    </div>
+                    <div class="" style="max-width: 24%;margin-left:70%">
+                        <div class="__number " id="result">0</div>
+                        <div class="__title">Perdita di carico</div>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary btn-rounded" style="margin-left:40%" id="retrieve">Calcola</button>
+                    <hr>
+                </div>
+                <div id="colebrook">
+                    <br>
+                    <br>
+                    <div class="" >
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="l" name="l" style="max-width: 50%;" ></div>
+                            <div class="__title" style="max-width: 24%;padding-left:20%">λ</div>
+                        </div>
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="v" name="v" style="max-width: 50%;" ></div>
+                            <div class="__title" style="max-width: 24%;padding-left:20%">v</div>
+                        </div>
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="D" name="D" style="max-width: 50%;"></div>
+                            <div class="__title" style="max-width: 24%;margin-left:20%">D</div>
+                        </div>
+                    </div>
+                    <div class="" style="max-width: 24%;margin-left:70%">
+                        <div class="__number " id="result">0</div>
+                        <div class="__title">Perdita di carico</div>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary btn-rounded" style="margin-left:40%" id="retrieve">Calcola</button>
+                    <hr>
+                </div>
+                <div id="hazen">
+                    <br>
+                    <br>
+                    <div class="" >
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="l" name="l" style="max-width: 50%;" ></div>
+                            <div class="__title" style="max-width: 24%;padding-left:20%">λ</div>
+                        </div>
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="v" name="v" style="max-width: 50%;" ></div>
+                            <div class="__title" style="max-width: 24%;padding-left:20%">v</div>
+                        </div>
+                        <div>
+                            <div class="__number " style="margin-left: 15rem;" ><input value="0" type="number" id="D" name="D" style="max-width: 50%;"></div>
+                            <div class="__title" style="max-width: 24%;margin-left:20%">D</div>
+                        </div>
+                    </div>
+                    <div class="" style="max-width: 24%;margin-left:70%">
+                        <div class="__number " id="result">0</div>
+                        <div class="__title">Perdita di carico</div>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary btn-rounded" style="margin-left:40%" id="retrieve">Calcola</button>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <!-- .row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="-bg">
+                    <div id="panel-230-1-0-0">
+                        <div class="s" data-speed="1000">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+
+    </main>
+
+    <div class="col-xs-12  col-lg-3  col-lg-pull-9">
+        <div class="sidebar">
+            <div class="widget_nav_menu">
+                <ul class="menu">
+                    <li class="menu-item ">Perdita di Carico</li><br style="clear:both">
+                    <li class="menu-item current-menu-item basidicalcolo"><a >Basi di calcolo</a></li>
+                    <li class="menu-item colebrook"><a >Perdita di Carico <br> (cadente) con Colebrook-White</a></li>
+                    <li class="menu-item hazen"><a >Perdita di Carico <br> (cadente) con Hazen-Williams</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- end of .col -->
+
+</div>
+<!-- end of .content-area -->
+{% endblock %}

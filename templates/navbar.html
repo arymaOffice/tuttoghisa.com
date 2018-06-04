@@ -1,0 +1,138 @@
+<header>
+  <div class="top">
+    <div class="container">
+      <div class="top__left">
+        <div class="widget widget-icon-box">
+          <div class="icon-box">
+            <i class="fa  fa-home"></i>
+            <h4 class="icon-box__title">Il portale dedicato al mondo del'ingegneria idraulica</h4>
+            <span class="icon-box__subtitle"></span>
+          </div>
+        </div>
+      </div>
+      <div class="top__right">
+        <div class="widget widget_nav_menu">
+          <div class="menu-top-menu-container">
+            <ul class="menu">
+              <li class="menu-item"><a href="/chi-siamo">Chi Siamo</a></li>
+              <li class="menu-item"><a href="/strumenti">Strumenti</a></li>
+              <li class="menu-item"><a href="/normative-approfondimenti">Normative</a></li>
+              <li class="menu-item"><a href="/appalti">Appalti</a></li>
+
+              <li class="menu-item"><a href="/news">News</a></li>
+              <li class="menu-item"><a href="#">Contatti</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="widget widget-social-icons">
+          <a class="social-icons__link" href="#" target="_self">
+            <i class="fa  fa-facebook"></i>
+          </a>
+          <a class="social-icons__link" href="#" target="_self">
+            <i class="fa  fa-twitter"></i>
+          </a>
+          <a class="social-icons__link" href="#" target="_self">
+            <i class="fa  fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- end of .container -->
+  </div>
+  <!-- end of .top -->
+  <div class="header__container">
+    <div class="container">
+      <div class="header">
+        <!-- Logo and site name -->
+        <div class="header__logo">
+          <a href="/">
+            <img src="../asset/img/construction.jpg" alt="tuttoghisa" class="img-fluid" width="195" height="92">
+          </a>
+        </div>
+        <!-- Toggle button for Main Navigation on mobile -->
+        <button class="btn btn-dark header__navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#bolts-main-navigation">
+          <i class="fa  fa-bars  hamburger"></i>
+          <span>MENU</span>
+        </button>
+        <!-- Header navigation widget area -->
+        <div class="header__navigation-widgets">
+          <div class="widget widget_text">
+            <div class="textwidget">
+              <a class="btn btn-dark" href="/consulenza-online" target="_self">
+                <i class="fa fa-comments"></i>
+                Richiedi Consulenza
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="header__navigation collapse navbar-toggleable-md" id="bolts-main-navigation" aria-label="Main Menu" data-sticky="100">
+          <!-- Home Icon in Navigation -->
+          <a class="home-icon home-icon--active" href="/">
+            <i class="fa fa-home"></i>
+          </a>
+          <ul class="main-navigation js-main-nav">
+            <li class="menu-item menu-item-has-children">
+              <a href="#" class="disable">Prodotti</a>
+              <ul class="sub-menu">
+                {{menu| raw}}
+              </ul>
+            </li>
+            <li class="menu-item"><a href="/strumenti">Strumenti</a></li>    
+            <li class="menu-item"><a href="/normative-approfondimenti">Normative</a></li>
+              <li class="menu-item"><a href="/appalti">Appalti</a></li>
+            
+            <li class="menu-item "><a href="/news">News</a></li>
+            <li class="menu-item "><a href="/consulenza-online">Consulenza Online</a></li>
+          </ul>
+        </nav>
+        <!-- Header widget area -->
+        <div class="header__widgets">
+          <div class="widget widget-icon-box">
+            <div class="icon-box">
+              <i class="fa fa-check-square"></i>
+              <h4 class="icon-box__title">Oltre 15.000 prodotti</h4>
+            </div>
+          </div>
+          <div class="widget widget-icon-box">
+            <div class="icon-box">
+              <i class="fa fa-clock-o"></i>
+              <h4 class="icon-box__title">Strumenti utili</h4>
+            </div>
+          </div>
+          <div class="widget widget-icon-box">
+            <div class="icon-box">
+              <i class="fa fa-envelope"></i>
+              <h4 class="icon-box__title">Consulenza alla progettazione</h4>
+            </div>
+          </div>
+          {% if nome %}<div class="widget widget_text">
+          <div class="textwidget">
+            <a class="btn btn-primary btn-rounded" href="/esci" target="_self">
+             Esci
+           </a>
+         </div>
+       </div>
+       <div class="col-lg-12 text-center" > Benvenuto {{nome}}</div>
+       {% else %}
+       <div class="widget widget_text">
+        <div class="textwidget">
+          <a class="btn btn-primary btn-rounded" href="/registrati" target="_self">
+           Registrati
+         </a>
+         <a class="btn btn-primary btn-rounded" href="/accedi" target="_self">
+           Accedi
+         </a>
+       </div>
+     </div>
+     {%endif%}
+
+   </div>
+ </div>
+ <!-- end of .header -->
+</div>
+<!-- end of .container -->
+</div>
+<!-- end of .header__container -->
+</header>

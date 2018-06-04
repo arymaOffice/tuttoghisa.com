@@ -1,0 +1,101 @@
+{%extends 'base.html'%}
+{%block body%}
+            <div class="page-header">
+                <div class="container">
+                    <div class="page-header__text">
+                        <h1 class="page-header__title">{{pagetitle}}</h1>
+                        <p class="page-header__subtitle">Ultime notizie di Tuttoghisa</p>
+                    </div>
+                    <div class="breadcrumbs">
+                        <a title="home" href="/" class="home">
+                            Tuttoghisa
+                        </a>
+                        <span>{{pagetitle}}</span>
+                    </div>
+                </div>
+                <!-- end of .container -->
+            </div>
+            <!-- end of .page-header -->
+
+            <div class="content-area container">
+                                                          <div class="row">
+                    <div class="col-lg-12">
+                        <div class="widget">
+                            <div class="textwidget" style="text-align: center;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Footer -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4180109058245769"
+     data-ad-slot="4399229185"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br><br>
+
+                <div class="row">
+
+                    <main class="site-main col-xs-12 col-lg-9">
+                        {% for item in news %}
+                        <article class="clearfix hentry">
+                            <header class="hentry__header">
+                                <a class="hentry__featured-image" href="/single-news?n={{item.id}}&type={{type}}" style="">
+                                    <img style="max-width: 94px;max-height: 86px;min-height: 86px;margin-right: 6px;" src="{{IMG_NEWS}}{{item.upfile}}" class="img-fluid" alt="photo31" >
+                                </a>
+                                <h2 class="hentry__title" style="display: inline-block;float: left;max-width:720px;margin-top: 10px;">
+                                    <a href="/single-news?n={{item.id}}&type={{type}}" rel="bookmark">{{item.titolo |convert_encoding ('ISO-8859-1','HTML-ENTITIES')}}</a>
+                                </h2>
+                            </header>
+                            <!-- .hentry__header -->
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="hentry__content ">
+                                <p>
+                                    {{item.articolo |convert_encoding ('UTF-8','HTML-ENTITIES') | striptags  |convert_encoding ('ISO-8859-1','HTML-ENTITIES') |convert_encoding ('UTF-8','HTML-ENTITIES') | slice (0,400)}}...
+                                </p>
+                                <p>
+                                    <a href="/single-news?n={{item.id}}&type={{type}}" class="more-link">Continua <span class="screen-reader-text">“{{item.titolo}}”</span></a>
+                                </p>
+                                <div class=" meta">
+                                    <span class="meta__item meta__item--author">
+                                        <i class="fa fa-user"></i>
+                                        admin
+                                    </span>
+                                    <a class="meta__item meta__item--date" href="#">
+                                        <time datetime="22-04-2016T10:10:51+00:00">
+                                            <i class="fa fa-calendar-o"></i>
+                                            {{item.data_pubblicazione |date("d/m/Y" ,"Europe/Paris")}}
+                                        </time>
+                                    </a>
+                                    <span class="meta__item meta__item--categories">
+                                        <i class="fa fa-tag"></i>
+                                        <a href="#" rel="category tag">{{item.tags}}</a>,
+
+                                    </span>
+                                    <span class="meta__item meta__item--comments">
+                                        <i class="fa fa-comment"></i>
+                                        <a href="#">{{ items.countCommenti }} Commenti</a>
+                                    </span>
+                                </div>
+                                <!-- .meta -->
+                            </div>
+                            <!-- .hentry-content -->
+                        </article>
+                        <!-- #post-## -->
+                        {% endfor%}
+
+
+                        <nav class="navigation pagination">
+                            <h2 class="screen-reader-text">Paginzaione</h2>
+                            <div class="nav-links">
+                                {{pagine | raw}}
+                            </div>
+                        </nav>
+
+                    </main>
+                    <!-- end of .site-main -->
+{% include 'barra_laterale.html'%}
+
+            {%endblock%}

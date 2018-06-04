@@ -1,0 +1,73 @@
+{% extends 'base.html'%}
+{% block body %}
+            <div class="page-header">
+                <div class="container">
+                    <div class="page-header__text">
+                        <h1 class="page-header__title">{{titleofpage}}</h1>
+                        <p class="page-header__subtitle">Tuttoghisa.com</p>
+                    </div>
+                    <div class="breadcrumbs">
+                        <span>
+                            <a title="home" href="/"><span>Tuttoghisa.com</span></a>
+                        </span>
+                        <span>
+                            {{titleofpage}}
+                        </span>
+                    </div>
+                </div>
+                <!-- end of .container-->
+            </div>
+            <!-- end of .page-header-->
+            <div class="content-area container">
+                <main>
+                    <article>
+                        <div class="hentry__content">
+                            <div class="row">
+                                <div class="col-lg-10 marg-sm-b30">
+                                    <div class="widget">
+                                        <div class="textwidget">
+                                            <h3>{{titleofpage}}</h3>
+                                            <div>
+
+                                                {{contentofpage.articolo |convert_encoding ('ISO-8859-1','HTML-ENTITIES')| raw}}
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of .col -->
+                            
+                             
+                            </div>
+                            <!-- end of .row -->
+                            <div class="row">
+                                <div class="col-lg-12 marg-sm-b30">
+                                    <div class="widget">
+                                        <div class="textwidget">
+
+
+                                          <strong class="textwidget__text--grey">
+                                             
+                                          </strong>
+                                          <br>
+                                               
+                                                    <span>
+                                                       
+
+                                                </strong>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of .col -->
+                            </div>
+                            <!-- end of .row -->
+
+                        </div>
+                        <!-- end of .hentry__content -->
+                    </article>
+                </main>
+            </div>
+            <!-- end of .content-area -->
+            {% endblock%}

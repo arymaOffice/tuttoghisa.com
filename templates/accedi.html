@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="page-header">
+  <div class="container">
+    <div class="page-header__text">
+      <h1 class="page-header__title">Accedi</h1>
+    </div>
+    <div class="breadcrumbs">
+      <span>
+        <a title="home" href="/"><span>Tuttoghisa</span></a>
+      </span>
+      <span>Accedi</span>
+    </div>
+  </div>
+  <!-- .container -->
+</div>
+<!-- .page-header -->
+
+<div class="container">
+  {% if msg_succ %}
+  <p style="color: #fff;background-color: #0c6c47;"><strong>Successo!</strong> {{msg_succ | raw}}</p>
+  {% endif %}
+  {% if msg_acc %}
+  <p style="color: #fff;background-color: #0c6c47;"><strong>Successo!</strong> {{msg_acc }}</p>
+  {% endif %}
+  {% if msg_presente %}
+  {{msg_presente  | raw}}
+  {% endif %}
+  {% if msg_sbagliato %}
+  <p style="background-color:#de3030;color:white"><strong>Hai Sbagliato!</strong> {{msg_sbagliato}}</p>
+  {% endif %}
+  {% if cambio %}
+  <p style="color: #fff;background-color: #0c6c47;"> <strong>Successo!</strong> {{cambio}}</p>
+  {% endif%}
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-lg-1"></div>
+    <div class="col-xs-6 col-sm-4 col-lg-4">
+      <span style="float: left;padding-top:37px">Non sei registrato? <a target="_blank" style="color:orange" href="/registrati"> Registrati da qui. </a></span>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-lg-6">
+      <form class="form-horizontal" method="POST" action="/accedi">
+
+        <div class="form-group">
+          <label  class="col-sm-2 control-label lb">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" name="email" placeholder="Email" >
+          </div>
+        </div>
+        <div class="col-sm-12 "><br></div>
+        <div class="form-group">
+          <label  class="col-sm-2 control-label lb">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+
+          <div class="col-sm-offset-2 col-sm-10 ">
+            <br>
+            <button type="submit" class="btn btn-primary btn-rounded" style="float: right;">Accedi</button>
+            </div>
+        </div>
+        <span style="float: right;padding-top:37px">Hai dimenticato la password? <a target="_blank" style="color:orange" href="/password-dimenticata">Cambiala da qui. </a></span>
+      </form>
+    </div>
+    <div class="col-xs-12 col-sm-2 col-lg-1"></div>
+
+
+  </div>
+  <!-- end of .error-404__content -->
+</div>
+<!-- end of .container -->
+
+<br>
+<br>
+<br>
+
+
+{%endblock%}
