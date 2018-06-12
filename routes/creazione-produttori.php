@@ -12,7 +12,7 @@ for ($i=1; $i <=$num ; $i++) {
 	$sql_p="SELECT label FROM ".ITEMS." WHERE id=$N";
 	$query_p=mysqli_query($connect,$sql_p);
 	$ar=mysqli_fetch_assoc($query_p);
-	$bottoni.='<button style="min-width: 285px;margin-bottom:5px;margin-right:5px" class="btn  btn-secondary" id="'.$N.'" data-rel="'.$id.'">'.$ar['label'].'</button>';
+	$bottoni.='<button style="min-width: 285px;margin-bottom:5px;margin-right:5px;display:none;" class="btn  btn-secondary" id="'.$N.'" data-rel="'.$id.'">'.$ar['label'].'</button>';
 	$bottoni .= ($i % 4 == 0 ) ? '<br>' : ''; 
 	$retVal = ($i < $num) ? $Prodottoda.=$ar['label'].',' : $Prodottoda.=$ar['label'].'.' ;
 }
