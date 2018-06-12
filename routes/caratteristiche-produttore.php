@@ -78,7 +78,7 @@ $app->get('/caratteristiche-produttore',function() use($app,$connect){
 				$return = (!isset($row[$val])) ? '' : $row[$val] ;
 				$righe.=" data-title='".$arrayIntestazione[$i - 1]."'>";
 				if($i ==$n_rows){
-					$righe .= '<a target="_blank" href="/consulenza-online?id='.$id.'">Richiedi Informazioni</a>';
+					$righe .= '<a target="_blank" href="/consulenza-online?id='.$id.'">Richiedi Preventivi</a>';
 				}else{
 					$righe.=$return;
 				}
